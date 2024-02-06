@@ -1,0 +1,182 @@
+html {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* body */
+body {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* footer */
+.footer {
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+/* content */
+#content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Nav bar */
+#homeIcon {
+    width: 40%;
+    height: 40%;
+}
+
+.navContainer {
+    width: 100%;
+}
+
+.navbar-toggler-icon {
+    border-color: cyan;
+}
+
+#menuBtn {
+    margin-bottom: 3%;
+}
+
+/* register page */
+#regFormPicture {
+    z-index: -100;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+#registerButton {
+    display: flex;
+    flex-direction: column;
+}
+
+#RegFormTittle {
+    font-size: 120%;
+}
+
+#logButton {
+    margin: 5%;
+    width: fit-content;
+}
+
+/* login page */
+.logbtn {
+    display: flex;
+    flex-direction: column;
+}
+
+/* welcome page */
+#welcomeVideo {
+    z-index: -100;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    object-fit: cover;
+}
+
+.welcomeContainer {
+    height: 100%;
+    width: 100%;
+}
+
+#welcomeCard {
+    border: none;
+    background-color: transparent;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#welcomeSlogen {
+    font-size: 300%;
+    font-family: "Arial Black", Gadget, sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: capitalize;
+    margin-bottom: 7%;
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
+#welcomeButton {
+    height: 30%;
+    width: 50%;
+    font-size: 120%;
+    font-family: "Arial Black", Gadget, sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    font-style: italic;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+/* home page */
+#homeCard{
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+}
+#homeContainer {
+    height: 100%;
+    width: 100%;
+}
+#homeSlogen {
+    font-size: 120%;
+    font-family: "Arial Black", Gadget, sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: capitalize;
+    margin-bottom: 7%;
+    margin-top: 7%;
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
+#homeButton {
+    font-family: "Arial Black", Gadget, sans-serif;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    font-style: italic;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+/* About us page */
+.aboutPic {
+    height: 10vh;
+    width: 10vh;
+}
+
+.aboutTittle {
+    font-size: 160%;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.aboutFont {
+    font-size: 110%;
+    font-family: "Arial", Gadget, sans-serif;
+}
+/* courses */
+#cardCourses{
+    margin-bottom: 7%;
+}
