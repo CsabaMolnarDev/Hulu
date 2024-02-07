@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <img id="regFormPicture" src="../storage/pictures/home.jpg" alt="background" title="background">
 <div class="container">
@@ -15,19 +14,33 @@
                 </div>{{-- end of the tittle --}}
                 <div class="card-body"> {{-- body of the card --}}
                     <div class="row">{{-- main content of card --}}
+                        <div class="col-4">{{-- left side of the card --}}
+
+                            {{-- <div class="row-12">
+                                <?php
+                                if ($item->picture) {
+                                    echo '<img class="card-img aboutPic" src="../storage/pictures/' . $item->picture . '.jpg" alt="Unknown picture"/>';
+                                }
+                                else {
+                                    echo '<img class="card-img aboutPic" src="../storage/pictures/courses_placeholder.png" alt="Unknown picture"/>';
+                                }
+                                ?>
+                            </div> --}}
+                         </div>{{-- end of the left side of the card --}}
+                         <div class="col-8">{{-- right side of the card --}}
                             <div class="row">{{-- TOP row --}}
                                 <div class="col-4">{{-- left side of the top row --}}
-                                    <p class="card-text aboutFont">Address:</p>
+                                    <p class="card-text aboutFont text-light">Address:</p>
                                 </div>
                                 <div class="col-8"> {{-- right side of the top row --}}
-                                    <p class="card-text aboutFont">{{$item->address}}
+                                    <p class="card-text aboutFont text-light">{{$item->address}}
                                 </p></div>
                             </div>
                             <div class="row">{{-- MIDDLE row --}}
                                 <div class="col-4">
-                                    <p class="card-text aboutFont">Contact name:</p></div>
+                                    <p class="card-text aboutFont text-light">Contact name:</p></div>
                                 <div class="col-8">
-                                    <p class="card-text aboutFont">{{$item->contactname}}</p></div>
+                                    <p class="card-text aboutFont text-light">{{$item->contactname}}</p></div>
                             </div>
                             <div class="row">{{-- BOTTOM row --}}
                                 <div class="col-4">
@@ -35,7 +48,29 @@
                                 <div class="col-8">
                                     <p class="card-text aboutFont">{{$item->email}}</p></div>
                             </div>
+                        </div>{{-- end of the right side of the card --}}
                     </div>{{-- end main content of card --}}
+                    @if(auth()->user()->roles_id == 1)
+                    <div class="row">
+                         <div class="col-4">
+                            <form action="{{ route('schools.show', $item->id) }}" method="GET">
+                                <button type="submit" class="btn btn-primary">Show</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="{{ route("schools.edit", $item->id) }}" method="GET">
+                            <button type="submit" class="btn btn-warning">Edit</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="{{ route("schools.destroy", $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    @endif
                 </div>{{-- end ofthe body of the card --}}
             </div>{{-- end of the card --}}
         </div>{{-- end of col-4 that setts the amount --}}

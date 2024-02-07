@@ -18,7 +18,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">                   
+    <div id="app">
             {{-- Navnar --}}
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
@@ -30,7 +30,7 @@
                             {{ url('/home') }}
                         @endguest
                             ">
-                        <img id="homeIcon" src="../storage/icons/home3.png" alt=""> 
+                        <img id="homeIcon" src="../storage/icons/home3.png" alt="">
                     </a>
                     {{-- Side menu  --}}
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -39,7 +39,7 @@
                     <div class="offcanvas offcanvas-end bg-dark text-info" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">Lionsdale</h5>
-    
+
                             <button type="button" class="btn text-reset" data-bs-dismiss="offcanvas"
                                 aria-label="Close">X</button>
                         </div>
@@ -61,13 +61,16 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                    <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=' {{ route("courses.index") }} '"">Courses</button>
-                                    <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=' {{ route("schools.index") }} '"">Schools</button>
-                                    {{-- @if(Auth::User -> role_id === 1) --}}
-                                    <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=' {{ route("courses.create") }} '"">Create courses</button>
-                                    {{-- @endif --}}
+                                    <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=' {{ route("courses.index") }} '">Courses</button>
+                                    <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=' {{ route("schools.index") }} '">Schools</button>
+                                    <?php
+                                        if(auth()->user()->roles_id == 1 || auth()->user()->roles_id == 2){
+                                            echo '
+                                                <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=" route("courses.create").">Create courses</button>';
+                                        }
+                                    ?>
                            @endguest
-                        <button class="btn btn-outline-info" type="submit" onclick="window.location=' {{ url("/about_us") }} '"">About us</button>
+                            <button class="btn btn-outline-info" type="submit" onclick="window.location=' {{ url("/about_us") }} '"">About us</button>
                         </ul>
                     </div>
                 </div>

@@ -22,7 +22,10 @@ class UpdateSchoolRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255|min:5|unique:schools,name',
+            'address' => 'required|string|max:255|min:5',
+            'contactname' => 'required|string|max:255|min:5',
+            'email' => 'required|string|max:255|min:5',
         ];
     }
 }

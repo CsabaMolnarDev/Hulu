@@ -1,5 +1,3 @@
-{{-- TODO: edit update delete --}}
-{{-- courses and schools --}}
 @extends('layouts.app')
 @section('content')
 <img id="regFormPicture" src="../storage/pictures/home.jpg" alt="background" title="background">
@@ -52,11 +50,12 @@
                             </div>
                         </div>{{-- end of the right side of the card --}}
                     </div>{{-- end main content of card --}}
+                    @if(auth()->user()->roles_id == 1)
                     <div class="row">
                          <div class="col-4">
                             <form action="{{ route('courses.show', $item->id) }}" method="GET">
                                 <button type="submit" class="btn btn-primary">Show</button>
-                            </form> 
+                            </form>
                         </div>
                         <div class="col-4">
                             <form action="{{ route("courses.edit", $item->id) }}" method="GET">
@@ -71,6 +70,7 @@
                             </form>
                         </div>
                     </div>
+                    @endif
                 </div>{{-- end ofthe body of the card --}}
             </div>{{-- end of the card --}}
         </div>{{-- end of col-4 that setts the amount --}}

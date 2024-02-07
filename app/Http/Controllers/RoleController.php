@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\role;
 use App\Http\Requests\StoreroleRequest;
 use App\Http\Requests\UpdateroleRequest;
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
