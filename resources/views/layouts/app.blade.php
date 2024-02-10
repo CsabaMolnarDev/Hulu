@@ -67,6 +67,8 @@
                                         if(auth()->user()->roles_id == 1 || auth()->user()->roles_id == 2){
                                             echo '
                                                 <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=" route("courses.create").">Create courses</button>';
+                                            echo '
+                                                <button id="menuBtn" class="btn btn-outline-info" type="submit" onclick="window.location=" route("schools.create").">Create schools</button>';
                                         }
                                     ?>
                            @endguest

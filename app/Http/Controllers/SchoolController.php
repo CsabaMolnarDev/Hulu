@@ -44,9 +44,8 @@ class schoolController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(school $schools)
+    public function show($sid)
     {
-        $sid = $schools->id;
         $schools = DB::table('schools')->where('id', $sid)->get();
         return view('schools.show', ['schools' => $schools]);
     }
@@ -54,9 +53,8 @@ class schoolController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(school $schools)
+    public function edit($sid)
     {
-        $sid = $schools->id;
         $schools = DB::table('schools')->where('id', $sid)->get();
         return view('schools.edit', ['schools' => $schools]);
     }
@@ -75,9 +73,10 @@ class schoolController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(School $schools)
+    public function destroy($sid)
     {
-        $schools->delete();
-        return back()->with('message', $schools->name . ' was deleted Successfully');
+        $school = School::where('id', $sid);
+        $school->delete();
+        return back()->with('message', ' School was deleted Successfully');
     }
 }
